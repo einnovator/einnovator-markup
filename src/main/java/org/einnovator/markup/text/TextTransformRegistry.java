@@ -87,7 +87,6 @@ public class TextTransformRegistry {
 	 * 
 	 * @param key the key for the {@code TextTransform}
 	 * @param transform the {@code TextTransform}
-	 * @return this {@code TextTransformRegistry}
 	 */
 	public void put(Object key, TextTransform transform) {
 		tranformMap.put(key, transform);

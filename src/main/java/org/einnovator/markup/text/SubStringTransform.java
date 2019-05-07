@@ -42,7 +42,6 @@ public class SubStringTransform implements TextTransform {
 	/**
 	 * Create instance of {@code SubStringTransform}.
 	 *
-	 * @param beginIndex
 	 * @param endIndex
 	 */
 	public SubStringTransform(int endIndex) {

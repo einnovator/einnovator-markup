@@ -33,7 +33,7 @@ public class CleanupMarkupProcessor implements TextTransform {
 	//	
 	
 	/**
-	 * @see org.einnovator.text.TextTransform#transform(java.lang.String)
+	 * @see org.einnovator.markup.text.TextTransform#transform(java.lang.String)
 	 */
 	@Override
 	public String transform(String text) {

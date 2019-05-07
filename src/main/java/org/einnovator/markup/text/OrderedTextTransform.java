@@ -32,7 +32,6 @@ public class OrderedTextTransform extends CompositeTextTransform {
 	 * Create instance of {@code OrderedTextTransform}.
 	 *
 	 * @param transforms the list of {@code TextTransform}
-	 * @throws NullPointerException, if {@code transforms} in <code>null</code>
 	 */
 	public OrderedTextTransform(Collection<TextTransform> transforms) {
 		super(new ArrayList<TextTransform>(transforms.size()));
@@ -43,7 +42,6 @@ public class OrderedTextTransform extends CompositeTextTransform {
 	 * Create instance of {@code OrderedTextTransform}.
 	 *
 	 * @param transforms the list of {@code TextTransform}
-	 * @throws NullPointerException, if {@code transforms} in <code>null</code>
 	 */
 	public OrderedTextTransform(TextTransform... transforms) {
 		super(new ArrayList<TextTransform>(transforms.length));
