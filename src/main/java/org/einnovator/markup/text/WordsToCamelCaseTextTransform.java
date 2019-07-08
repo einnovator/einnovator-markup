@@ -34,7 +34,7 @@ public class WordsToCamelCaseTextTransform implements TextTransform {
 	/**
 	 * Create instance of WordsToCamelCaseTextTransform.
 	 *
-	 * @param wordSeparator
+	 * @param wordSeparator the wordSeparator
 	 */
 	public WordsToCamelCaseTextTransform(String wordSeparator) {
 		this.wordSeparator = wordSeparator;

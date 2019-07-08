@@ -31,7 +31,7 @@ public class TextTransformRegistry {
 	/**
 	 * Create instance of {@code TextTransformRegistry}.
 	 *
-	 * @param tranformMap
+	 * @param tranformMap a map of transforms
 	 */
 	public TextTransformRegistry(Map<Object, TextTransform> tranformMap) {
 		this.tranformMap = tranformMap;

@@ -123,6 +123,7 @@ public class OrderedTextTransform extends CompositeTextTransform {
 	 * 
 	 * @param order the order of the {@code TextTransform}
 	 * @param transform the transform
+	 * @return {@code this}
 	 */
 	public CompositeTextTransform add(int order, TextTransform transform) {
 		addTransform(order, transform);
@@ -134,6 +135,7 @@ public class OrderedTextTransform extends CompositeTextTransform {
 	 * 
 	 * @param order the order of all the {@code TextTransform}
 	 * @param transforms the transforms
+	 * @return {@code this}
 	 */
 	public CompositeTextTransform addAll(int order, TextTransform... transforms) {
 		addTransforms(order, transforms);
@@ -145,6 +147,7 @@ public class OrderedTextTransform extends CompositeTextTransform {
 	 * 
 	 * @param order the order of all the {@code TextTransform}
 	 * @param transforms the transforms
+	 * @return {@code this}
 	 */
 	public OrderedTextTransform addAll(int order, Collection<TextTransform> transforms) {
 		addTransforms(order, transforms);

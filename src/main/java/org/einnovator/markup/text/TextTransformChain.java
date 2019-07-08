@@ -27,7 +27,7 @@ public class TextTransformChain implements TextTransform {
 	/**
 	 * Create instance of TextTransformChain.
 	 *
-	 * @param transforms
+	 * @param transforms variadic array of {@code TextTransform}
 	 */
 	public TextTransformChain(TextTransform... transforms) {
 		this.transforms = transforms;

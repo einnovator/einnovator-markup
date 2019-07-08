@@ -26,8 +26,6 @@ public class XMLProcessor implements TextTransform {
 
 	private final Log logger = LogFactory.getLog(getClass());
 	
-	private boolean debug;
-
 	private boolean ignoreDtd;
 	
 	private boolean ignoreStartDocument;
@@ -157,24 +155,6 @@ public class XMLProcessor implements TextTransform {
 		this.trimSpaces = trimSpaces;
 	}
 
-	/**
-	 * Get the value of property {@code debug}.
-	 *
-	 * @return the {@code debug}
-	 */
-	public boolean isDebug() {
-		return debug;
-	}
-
-	/**
-	 * Set the value of property {@code debug}.
-	 *
-	 * @param debug the {@code debug} to set
-	 */
-	public void setDebug(boolean debug) {
-		this.debug = debug;
-	}
-
 	//
 	// TextTransform Implementation
 	//
@@ -212,7 +192,7 @@ public class XMLProcessor implements TextTransform {
 				if (ignoreStartDocument) {
 					break;
 				}
-				if (debug) {
+				if ((logger.isTraceEnabled())) {
 					logger.trace(String.format("transformInternal[START_DOCUMENT]:  %s %s", reader.getEncoding(), reader.getVersion()));					
 				}				
 				writer.writeStartDocument(reader.getEncoding(), reader.getVersion());
@@ -221,7 +201,7 @@ public class XMLProcessor implements TextTransform {
 				if (ignoreStartDocument) {
 					break;
 				}
-				if (debug) {
+				if ((logger.isTraceEnabled())) {
 					logger.trace(String.format("transformInternal[END_DOCUMENT]"));					
 				}
 				writer.writeEndDocument();
@@ -254,7 +234,7 @@ public class XMLProcessor implements TextTransform {
 					break;
 				}
 
-				if (debug) {
+				if ((logger.isTraceEnabled())) {
 					logger.trace(String.format("transformInternal[END_ELEMENT]: %s %s %s", reader.getPrefix(), reader.getLocalName(), reader.getNamespaceURI()));					
 				}
 				if (!ignoreElement(reader.getPrefix(), reader.getLocalName(), reader.getNamespaceURI())) {
@@ -265,7 +245,7 @@ public class XMLProcessor implements TextTransform {
 				if (ignore) {
 					break;
 				}
-				if (debug) {
+				if ((logger.isTraceEnabled())) {
 					logger.trace(String.format("transformInternal[ATTRIBUTE]: %s", reader.getAttributeCount()));					
 				}
 				break;
@@ -274,11 +254,11 @@ public class XMLProcessor implements TextTransform {
 				if (ignore) {
 					break;
 				}
-				if (debug) {
+				if ((logger.isTraceEnabled())) {
 					logger.trace(String.format("transformInternal[NAMESPACE]: %s", reader.getNamespaceCount()));					
 				}
 				for (int i=0; i<reader.getNamespaceCount(); i++) {
-					if (debug) {
+					if ((logger.isTraceEnabled())) {
 						logger.trace(String.format("transformInternal[NAMESPACE]: %s", reader.getNamespacePrefix(i), reader.getNamespaceURI(i)));					
 					}
 					writer.writeNamespace(reader.getNamespacePrefix(i), reader.getNamespaceURI(i));
@@ -296,7 +276,7 @@ public class XMLProcessor implements TextTransform {
 				/*if (trimSpaces) {
 					text = text.trim();
 				}*/
-				if (debug) {
+				if ((logger.isTraceEnabled())) {
 					logger.trace(String.format("transformInternal[CHARACTERS]: %s", text));
 				}
 				writer.writeCharacters(text);
@@ -305,7 +285,7 @@ public class XMLProcessor implements TextTransform {
 				if (ignore) {
 					break;
 				}
-				if (debug) {
+				if ((logger.isTraceEnabled())) {
 					logger.trace(String.format("transformInternal[CDATA]: %s", reader.getText()));					
 				}
 				String cdata = reader.getText();
@@ -325,7 +305,7 @@ public class XMLProcessor implements TextTransform {
 				if (ignore || ignoreComments) {
 					break;
 				}
-				if (debug) {
+				if ((logger.isTraceEnabled())) {
 					logger.trace(String.format("transformInternal[COMMENT]: %s", reader.getText()));					
 				}
 				String comment = reader.getText();
@@ -335,7 +315,7 @@ public class XMLProcessor implements TextTransform {
 				if (ignore || ignoreSpaces) {
 					break;
 				}
-				if (debug) {
+				if ((logger.isTraceEnabled())) {
 					logger.trace(String.format("transformInternal[SPACE]: %s", reader.getText()));					
 				}
 				writer.writeCharacters(reader.getText());
@@ -345,7 +325,7 @@ public class XMLProcessor implements TextTransform {
 				if (ignore || ignorePI) {
 					break;
 				}
-				if (debug) {
+				if ((logger.isTraceEnabled())) {
 					logger.trace(String.format("transformInternal[PROCESSING_INSTRUCTION]: %s", reader.getText()));					
 				}
 				writer.writeProcessingInstruction(reader.getPITarget(), reader.getPIData());
@@ -354,7 +334,7 @@ public class XMLProcessor implements TextTransform {
 				if (ignore) {
 					break;
 				}
-				if (debug) {
+				if ((logger.isTraceEnabled())) {
 					logger.trace(String.format("transformInternal[ENTITY_REFERENCE]: %s", reader.getText()));
 				}
 				writer.writeEntityRef(reader.getText());
@@ -363,7 +343,7 @@ public class XMLProcessor implements TextTransform {
 				if (ignore || ignoreDtd) {
 					break;
 				}
-				if (debug) {
+				if ((logger.isTraceEnabled())) {
 					logger.trace(String.format("transformInternal[DTD]: %s", reader.getText()));
 				}
 				writer.writeDTD(reader.getText());
@@ -378,7 +358,7 @@ public class XMLProcessor implements TextTransform {
 	}
 	
 	protected void writeStartElement(XMLStreamReader reader, XMLStreamWriter writer) throws XMLStreamException {
-		if (debug) {
+		if ((logger.isTraceEnabled())) {
 			logger.trace(String.format("transformInternal[START_ELEMENT]: %s %s %s", reader.getPrefix(), reader.getLocalName(), reader.getNamespaceURI()));
 		}
 		if (!StringUtils.isEmpty(reader.getNamespaceURI())) {
@@ -410,19 +390,21 @@ public class XMLProcessor implements TextTransform {
 			String attributePrefix, String attributeNamespace, String attributeLocalName,  String attributeValue) throws XMLStreamException {
 		String value = processAttributeValue(elementPrefix, elementLocalName, elementNamespaceURI, 
 				attributePrefix, attributeNamespace, attributeLocalName, attributeValue);
-		if (debug) {
+		if ((logger.isTraceEnabled())) {
 			logger.trace(String.format("transformInternal[ATTRIBUTE]: %s %s %s %s %s", attributePrefix, attributeNamespace,
 					attributeLocalName, attributeValue, value));						
 		}
-		if (!StringUtils.isEmpty(attributeNamespace)) {
-			writer.writeAttribute(attributePrefix, attributeNamespace, attributeLocalName, value);
-		} else {
-			if (!StringUtils.isEmpty(attributePrefix)) {
-				writer.writeAttribute(attributePrefix, attributeLocalName, value);
+		if (value!=null) {
+			if (!StringUtils.isEmpty(attributeNamespace)) {
+				writer.writeAttribute(attributePrefix, attributeNamespace, attributeLocalName, value);
 			} else {
-				writer.writeAttribute(attributeLocalName, value);
-			}
-		}		
+				if (!StringUtils.isEmpty(attributePrefix)) {
+					writer.writeAttribute(attributePrefix, attributeLocalName, value);
+				} else {
+					writer.writeAttribute(attributeLocalName, value);
+				}
+			}			
+		}
 	}
 
 	protected String processAttributeValue(String elementPrefix, String elementLocalName, String elementNamespaceURI, 

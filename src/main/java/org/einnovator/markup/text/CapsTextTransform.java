@@ -25,7 +25,7 @@ public class CapsTextTransform implements TextTransform {
 	/**
 	 * Create instance of {@code CapsTextTransform}.
 	 *
-	 * @param capitalize
+	 * @param capitalize capitalize flag
 	 */
 	public CapsTextTransform(boolean capitalize) {
 		this.capitalize = capitalize;
@@ -34,8 +34,8 @@ public class CapsTextTransform implements TextTransform {
 	/**
 	 * Create instance of {@code CapsTextTransform}.
 	 *
-	 * @param capitalize
-	 * @param capitalizeWords
+	 * @param capitalize capitalize flag
+	 * @param capitalizeWords capitalize words flag
 	 */
 	public CapsTextTransform(boolean capitalize, boolean capitalizeWords) {
 		this.capitalize = capitalize;

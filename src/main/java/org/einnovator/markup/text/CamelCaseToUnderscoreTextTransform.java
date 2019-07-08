@@ -31,7 +31,7 @@ public class CamelCaseToUnderscoreTextTransform extends CamelCaseToWordsTextTran
 	/**
 	 * Create instance of CamelCaseToWordsTextTransform.
 	 *
-	 * @param wordSeparator
+	 * @param wordSeparator the wordSeparator
 	 */
 	public CamelCaseToUnderscoreTextTransform(String wordSeparator) {
 		super(wordSeparator);

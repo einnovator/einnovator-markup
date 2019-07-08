@@ -31,8 +31,8 @@ public class EllipsisTransform implements TextTransform {
 	/**
 	 * Create instance of {@code EllipsisTransform}.
 	 *
-	 * @param maxLength
-	 * @param ellipsis
+	 * @param maxLength the max length
+	 * @param ellipsis the ellipsis string
 	 */
 	public EllipsisTransform(int maxLength, String ellipsis) {
 		this.maxLength = maxLength;
@@ -42,7 +42,7 @@ public class EllipsisTransform implements TextTransform {
 	/**
 	 * Create instance of {@code EllipsisTransform}.
 	 *
-	 * @param maxLength
+	 * @param maxLength the max length
 	 */
 	public EllipsisTransform(int maxLength) {
 		this.maxLength = maxLength;

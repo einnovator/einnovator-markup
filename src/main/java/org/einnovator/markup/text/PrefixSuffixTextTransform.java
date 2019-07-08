@@ -24,8 +24,8 @@ public class PrefixSuffixTextTransform implements TextTransform {
 	/**
 	 * Create instance of PrefixSuffixTextTransform.
 	 *
-	 * @param prefix
-	 * @param suffix
+	 * @param prefix the prefix
+	 * @param suffix the suffix
 	 */
 	public PrefixSuffixTextTransform(String prefix, String suffix) {
 		this.prefix = prefix;

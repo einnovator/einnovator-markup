@@ -31,8 +31,8 @@ public class SubStringTransform implements TextTransform {
 	/**
 	 * Create instance of {@code SubStringTransform}.
 	 *
-	 * @param beginIndex
-	 * @param endIndex
+	 * @param beginIndex the starting index
+	 * @param endIndex the ending index
 	 */
 	public SubStringTransform(int beginIndex, int endIndex) {
 		this.beginIndex = beginIndex;
@@ -42,7 +42,7 @@ public class SubStringTransform implements TextTransform {
 	/**
 	 * Create instance of {@code SubStringTransform}.
 	 *
-	 * @param endIndex
+	 * @param endIndex the ending index
 	 */
 	public SubStringTransform(int endIndex) {
 		this.endIndex = endIndex;
