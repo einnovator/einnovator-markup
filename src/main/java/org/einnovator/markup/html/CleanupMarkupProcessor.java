@@ -5,7 +5,7 @@ import org.einnovator.markup.text.TextTransform;
 /**
  * A {@code CleanupMarkupProcessor}.
  *
- * @author Jorge Simao, {@code jorge.simao@einnovator.org}
+ * @author  {@code support@einnovator.org}
  */
 public class CleanupMarkupProcessor implements TextTransform {
 

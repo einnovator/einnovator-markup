@@ -11,7 +11,7 @@ import org.einnovator.markup.text.TextTransform;
 /**
  * A {@code CssMapProcessor}.
  *
- * @author Jorge Simao {@code {jorge.simao@einnovator.org}}
+ * @author support@einnovator.org
  */
 public class StyleExtractorProcessor implements TextTransform {
 

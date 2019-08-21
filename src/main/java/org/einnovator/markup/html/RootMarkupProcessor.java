@@ -8,7 +8,7 @@ import org.einnovator.markup.text.OrderedTextTransform;
 /**
  * A {@code RootMarkupProcessor}.
  *
- * @author Jorge Simao {@code {jorge.simao@einnovator.org}}
+ * @author support@einnovator.org
  */
 public class RootMarkupProcessor extends OrderedTextTransform {
 

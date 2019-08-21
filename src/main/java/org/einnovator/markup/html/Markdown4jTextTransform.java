@@ -10,7 +10,7 @@ import org.markdown4j.Markdown4jProcessor;
 /**
  * A {@code Markdown4jTextTransform}.
  *
- * @author Jorge Simao {@code {jorge.simao@einnovator.org}}
+ * @author support@einnovator.org
  */
 public class Markdown4jTextTransform implements MarkupProcessor {
 

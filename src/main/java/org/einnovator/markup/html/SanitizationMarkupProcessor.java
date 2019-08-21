@@ -11,7 +11,7 @@ import org.owasp.html.Sanitizers;
 /**
  * An HTML sanitization {@code MarkupProcessor} based on OWASP HTML sanitization project.
  *
- * @author Jorge Simao {@code {jorge.simao@einnovator.org}}
+ * @author support@einnovator.org
  */
 public class SanitizationMarkupProcessor implements MarkupProcessor {
 

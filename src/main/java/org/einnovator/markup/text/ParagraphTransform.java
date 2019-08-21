@@ -6,7 +6,7 @@ package org.einnovator.markup.text;
 /**
  * A {@code ParagraphTransform}.
  *
- * @author Jorge Simao, {@code jorge.simao@einnovator.org} {@code {jorge.simao@einnovator.org}}
+ * @author  {@code support@einnovator.org} {@code {jorge.simao@einnovator.org}}
  */
 public class ParagraphTransform implements TextTransform {
 

@@ -7,7 +7,7 @@ package org.einnovator.markup.text;
 /**
  * A IdentityTextTransformer.
  *
- * @author Jorge Simao, {@code jorge.simao@einnovator.org}
+ * @author  {@code support@einnovator.org}
  */
 public class IdentityTextTransform implements TextTransform {
 

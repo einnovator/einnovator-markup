@@ -9,7 +9,7 @@ import org.einnovator.markup.text.TextTransform;
 /**
  * A SingularTextTransform.
  *
- * @author Jorge Simao, {@code jorge.simao@einnovator.org}
+ * @author  {@code support@einnovator.org}
  */
 public class SingularTextTransform implements TextTransform {
 

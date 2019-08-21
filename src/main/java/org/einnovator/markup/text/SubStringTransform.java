@@ -8,7 +8,7 @@ import org.einnovator.markup.text.TextTransform;
 /**
  * A {@code SubStringTransform}.
  *
- * @author Jorge Simao, {@code jorge.simao@einnovator.org} {@code {jorge.simao@einnovator.org}}
+ * @author  {@code support@einnovator.org} {@code {jorge.simao@einnovator.org}}
  */
 public class SubStringTransform implements TextTransform {
 

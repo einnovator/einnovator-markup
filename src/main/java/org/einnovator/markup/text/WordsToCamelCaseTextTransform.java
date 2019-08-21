@@ -10,7 +10,7 @@ import org.einnovator.markup.text.TextTransform;
 /**
  * A WordsToCamelCaseTextTransform.
  *
- * @author Jorge Simao, {@code jorge.simao@einnovator.org}
+ * @author  {@code support@einnovator.org}
  */
 public class WordsToCamelCaseTextTransform implements TextTransform {
 

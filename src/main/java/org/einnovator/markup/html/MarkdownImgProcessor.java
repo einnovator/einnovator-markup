@@ -9,7 +9,7 @@ import org.springframework.util.StringUtils;
 /**
  * A {@code MarkdownImgProcessor}.
  *
- * @author Jorge Simao {@code {jorge.simao@einnovator.org}}
+ * @author support@einnovator.org
  */
 public class MarkdownImgProcessor implements MarkupProcessor {
 

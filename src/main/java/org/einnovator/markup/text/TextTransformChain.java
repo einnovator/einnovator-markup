@@ -7,7 +7,7 @@ package org.einnovator.markup.text;
 /**
  * A TextTransformChain.
  *
- * @author Jorge Simao, {@code jorge.simao@einnovator.org}
+ * @author  {@code support@einnovator.org}
  */
 public class TextTransformChain implements TextTransform {
 

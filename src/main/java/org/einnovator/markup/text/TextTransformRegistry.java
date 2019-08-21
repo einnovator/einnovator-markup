@@ -7,7 +7,7 @@ import java.util.Map;
 /**
  * A registry for {@code TextTransform} indexed by some key.
  *
- * @author Jorge Simao, {@code jorge.simao@einnovator.org}
+ * @author  {@code support@einnovator.org}
  *
  */
 public class TextTransformRegistry {

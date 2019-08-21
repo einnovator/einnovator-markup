@@ -10,7 +10,7 @@ import org.einnovator.markup.text.TextTransform;
 /**
  * A {@code CDataMarkupTransform}.
  *
- * @author Jorge Simao, {@code jorge.simao@einnovator.org}
+ * @author  {@code support@einnovator.org}
  */
 public class EntityMarkupTransform implements TextTransform {
 

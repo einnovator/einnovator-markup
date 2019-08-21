@@ -11,7 +11,7 @@ import org.einnovator.markup.text.TextTransform;
 /**
  * A CamelCaseToWordsTextTransform.
  *
- * @author Jorge Simao, {@code jorge.simao@einnovator.org}
+ * @author  {@code support@einnovator.org}
  */
 public class CamelCaseToWordsTextTransform implements TextTransform {
 

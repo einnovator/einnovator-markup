@@ -13,7 +13,7 @@ import org.einnovator.markup.text.XmlAttributeToCamelCaseTextTransform;
 /**
  * A CommonTextTransform.
  *
- * @author Jorge Simao, {@code jorge.simao@einnovator.org}
+ * @author  {@code support@einnovator.org}
  */
 public class TextTransforms {
 	

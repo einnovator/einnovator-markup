@@ -6,7 +6,7 @@ package org.einnovator.markup.html;
 /**
  * AA {@code AppMarkupProcessor}.
  *
- * @author Jorge Simao {@code {jorge.simao@einnovator.org}}
+ * @author support@einnovator.org
  */
 public class AppMarkupProcessor extends RootMarkupProcessor {
 

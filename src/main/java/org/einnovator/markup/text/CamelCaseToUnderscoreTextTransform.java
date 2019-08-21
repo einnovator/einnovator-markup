@@ -7,7 +7,7 @@ package org.einnovator.markup.text;
 /**
  * A CamelCaseToUnderscoreTextTransform.
  *
- * @author Jorge Simao, {@code jorge.simao@einnovator.org}
+ * @author  {@code support@einnovator.org}
  */
 public class CamelCaseToUnderscoreTextTransform extends CamelCaseToWordsTextTransform {
 
