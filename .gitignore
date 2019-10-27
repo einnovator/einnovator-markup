@@ -1,6 +1,7 @@
 target/
 build/
 bin/
+.travis.settings.xml
 
 # Compiled class file
 *.class
