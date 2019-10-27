@@ -26,7 +26,11 @@
 			<artifactId>einnovator-util</artifactId>
 			<version>${einnovator.version}</version>
 		</dependency>
- 
+		<dependency>
+			<groupId>org.einnovator</groupId>
+			<artifactId>einnovator-script</artifactId>
+			<version>${einnovator.version}</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -55,6 +59,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		
+		<dependency> 
+			<groupId>org.antlr</groupId> 
+			<artifactId>antlr4</artifactId> 
+			<version>4.7.2</version> 
 		</dependency>
 	</dependencies>
 
