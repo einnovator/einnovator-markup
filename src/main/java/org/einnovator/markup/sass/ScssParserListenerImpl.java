@@ -67,7 +67,6 @@ import org.einnovator.script.model.JExpr;
 import org.einnovator.script.model.JLiteral;
 import org.einnovator.script.model.JOperationX;
 import org.einnovator.script.model.JOperationXY;
-import org.einnovator.script.model.JRef;
 import org.einnovator.script.model.JVarRef;
 
 /**
@@ -120,8 +119,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void enterStylesheet(StylesheetContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("enterStylesheet:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterStylesheet:" + ctx.getText());			
 		}
 		stylesheet = new Stylesheet();
 	}
@@ -131,8 +130,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void exitStylesheet(StylesheetContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("exitStylesheet:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitStylesheet:" + ctx.getText());			
 		}
 	}
 
@@ -142,8 +141,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void visitTerminal(TerminalNode node) {
-		if (logger.isInfoEnabled()) {
-			logger.info("visitTerminal:" + node);			
+		if (logger.isDebugEnabled()) {
+			logger.debug("visitTerminal:" + node);			
 		}
 		if (bexpr || expr!=null) {
 			JLiteral literal = new JLiteral(node.getText());
@@ -171,8 +170,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void visitErrorNode(ErrorNode node) {
-		if (logger.isInfoEnabled()) {
-			logger.info("visitErrorNode:" + node);			
+		if (logger.isDebugEnabled()) {
+			logger.debug("visitErrorNode:" + node);			
 		}
 
 		
@@ -205,8 +204,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void enterStatement(StatementContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("enterStatement:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterStatement:" + ctx.getText());			
 		}
 		
 		
@@ -217,8 +216,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void exitStatement(StatementContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("exitStatement:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitStatement:" + ctx.getText());			
 		}
 		
 		
@@ -229,8 +228,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void enterParams(ParamsContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("enterParams:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterParams:" + ctx.getText());			
 		}
 		
 		
@@ -241,8 +240,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void exitParams(ParamsContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("exitParams:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitParams:" + ctx.getText());			
 		}
 		
 	}
@@ -252,8 +251,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void enterParam(ParamContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("enterParam:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterParam:" + ctx.getText());			
 		}
 		
 	}
@@ -263,8 +262,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void exitParam(ParamContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("exitParam:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitParam:" + ctx.getText());			
 		}		
 		
 	}
@@ -274,8 +273,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void enterVariableName(VariableNameContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("enterVariableName:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterVariableName:" + ctx.getText());			
 		}
 		String name = ctx.getText().substring(1);
 		if (var!=null && var.getName()==null) {
@@ -291,8 +290,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void exitVariableName(VariableNameContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("exitVariableName:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitVariableName:" + ctx.getText());			
 		}		
 		
 	}
@@ -302,8 +301,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void enterParamOptionalValue(ParamOptionalValueContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("enterParamOptionalValue:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterParamOptionalValue:" + ctx.getText());			
 		}		
 		
 	}
@@ -313,8 +312,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void exitParamOptionalValue(ParamOptionalValueContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("exitParamOptionalValue:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitParamOptionalValue:" + ctx.getText());			
 		}		
 		
 	}
@@ -324,8 +323,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void enterMixinDeclaration(MixinDeclarationContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("enterMixinDeclaration:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterMixinDeclaration:" + ctx.getText());			
 		}		
 		
 	}
@@ -336,8 +335,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	@Override
 	public void exitMixinDeclaration(MixinDeclarationContext ctx) {
 		
-		if (logger.isInfoEnabled()) {
-			logger.info("exitMixinDeclaration:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitMixinDeclaration:" + ctx.getText());			
 		}		
 	}
 
@@ -347,8 +346,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	@Override
 	public void enterIncludeDeclaration(IncludeDeclarationContext ctx) {
 		
-		if (logger.isInfoEnabled()) {
-			logger.info("enterIncludeDeclaration:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterIncludeDeclaration:" + ctx.getText());			
 		}	
 	}
 
@@ -357,8 +356,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void exitIncludeDeclaration(IncludeDeclarationContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("exitIncludeDeclaration:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitIncludeDeclaration:" + ctx.getText());			
 		}	
 		
 	}
@@ -368,8 +367,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void enterFunctionDeclaration(FunctionDeclarationContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("enterFunctionDeclaration:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterFunctionDeclaration:" + ctx.getText());			
 		}	
 		
 	}
@@ -379,8 +378,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void exitFunctionDeclaration(FunctionDeclarationContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("exitFunctionDeclaration:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitFunctionDeclaration:" + ctx.getText());			
 		}	
 		
 	}
@@ -390,8 +389,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void enterFunctionBody(FunctionBodyContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("enterFunctionBody:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterFunctionBody:" + ctx.getText());			
 		}	
 		
 	}
@@ -401,8 +400,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void exitFunctionBody(FunctionBodyContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("exitFunctionBody:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitFunctionBody:" + ctx.getText());			
 		}	
 		
 	}
@@ -412,8 +411,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void enterFunctionReturn(FunctionReturnContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("enterFunctionReturn:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterFunctionReturn:" + ctx.getText());			
 		}
 		
 	}
@@ -423,8 +422,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void exitFunctionReturn(FunctionReturnContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("exitFunctionReturn:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitFunctionReturn:" + ctx.getText());			
 		}
 		
 	}
@@ -434,8 +433,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void enterFunctionStatement(FunctionStatementContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("enterFunctionStatement:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterFunctionStatement:" + ctx.getText());			
 		}
 		
 	}
@@ -445,8 +444,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void exitFunctionStatement(FunctionStatementContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("exitFunctionStatement:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitFunctionStatement:" + ctx.getText());			
 		}
 		
 	}
@@ -456,8 +455,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void enterCommandStatement(CommandStatementContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("enterCommandStatement:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterCommandStatement:" + ctx.getText());			
 		}
 		
 	}
@@ -468,8 +467,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	@Override
 	public void exitCommandStatement(CommandStatementContext ctx) {
 		
-		if (logger.isInfoEnabled()) {
-			logger.info("exitCommandStatement:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitCommandStatement:" + ctx.getText());			
 		}
 	}
 
@@ -478,8 +477,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void enterMathCharacter(MathCharacterContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("enterMathCharacter:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterMathCharacter:" + ctx.getText());			
 		}
 		
 	}
@@ -489,8 +488,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void exitMathCharacter(MathCharacterContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("exitMathCharacter:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitMathCharacter:" + ctx.getText());			
 		}
 		
 	}
@@ -500,8 +499,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void enterMathStatement(MathStatementContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("enterMathStatement:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterMathStatement:" + ctx.getText());			
 		}
 		
 	}
@@ -512,8 +511,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	@Override
 	public void exitMathStatement(MathStatementContext ctx) {
 		
-		if (logger.isInfoEnabled()) {
-			logger.info("exitMathStatement:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitMathStatement:" + ctx.getText());			
 		}
 	}
 
@@ -522,8 +521,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void enterExpression(ExpressionContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("enterExpression:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterExpression:" + ctx.getText());			
 		}
 		bexpr = true;
 		expr = null;
@@ -534,8 +533,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void exitExpression(ExpressionContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("exitExpression:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitExpression:" + ctx.getText());			
 		}
 		bexpr = false;
 	}
@@ -546,8 +545,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	@Override
 	public void enterIfDeclaration(IfDeclarationContext ctx) {
 		
-		if (logger.isInfoEnabled()) {
-			logger.info("enterIfDeclaration:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterIfDeclaration:" + ctx.getText());			
 		}
 	}
 
@@ -556,8 +555,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void exitIfDeclaration(IfDeclarationContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("exitIfDeclaration:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitIfDeclaration:" + ctx.getText());			
 		}
 		
 	}
@@ -567,8 +566,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void enterElseIfStatement(ElseIfStatementContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("enterElseIfStatement:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterElseIfStatement:" + ctx.getText());			
 		}
 		
 	}
@@ -579,8 +578,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	@Override
 	public void exitElseIfStatement(ElseIfStatementContext ctx) {
 		
-		if (logger.isInfoEnabled()) {
-			logger.info("exitElseIfStatement:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitElseIfStatement:" + ctx.getText());			
 		}
 	}
 
@@ -589,8 +588,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void enterElseStatement(ElseStatementContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("enterElseStatement:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterElseStatement:" + ctx.getText());			
 		}
 		
 	}
@@ -601,8 +600,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	@Override
 	public void exitElseStatement(ElseStatementContext ctx) {
 		
-		if (logger.isInfoEnabled()) {
-			logger.info("exitElseStatement:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitElseStatement:" + ctx.getText());			
 		}
 	}
 
@@ -612,8 +611,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	@Override
 	public void enterConditions(ConditionsContext ctx) {
 		
-		if (logger.isInfoEnabled()) {
-			logger.info("enterConditions:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterConditions:" + ctx.getText());			
 		}
 	}
 
@@ -623,8 +622,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	@Override
 	public void exitConditions(ConditionsContext ctx) {
 		
-		if (logger.isInfoEnabled()) {
-			logger.info("exitConditions:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitConditions:" + ctx.getText());			
 		}
 	}
 
@@ -633,8 +632,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void enterCondition(ConditionContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("enterCondition:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterCondition:" + ctx.getText());			
 		}
 		
 	}
@@ -644,8 +643,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void exitCondition(ConditionContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("exitCondition:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitCondition:" + ctx.getText());			
 		}
 		
 	}
@@ -655,8 +654,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void enterVariableDeclaration(VariableDeclarationContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("enterVariableDeclaration:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterVariableDeclaration:" + ctx.getText());			
 		}
 		var = new StyleVariable();
 		
@@ -667,8 +666,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void exitVariableDeclaration(VariableDeclarationContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("exitVariableDeclaration:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitVariableDeclaration:" + ctx.getText());			
 		}
 		stylesheet.addVariable(var);
 		var = null;
@@ -681,8 +680,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	@Override
 	public void enterForDeclaration(ForDeclarationContext ctx) {
 		
-		if (logger.isInfoEnabled()) {
-			logger.info("enterForDeclaration:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterForDeclaration:" + ctx.getText());			
 		}
 	}
 
@@ -692,8 +691,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	@Override
 	public void exitForDeclaration(ForDeclarationContext ctx) {
 		
-		if (logger.isInfoEnabled()) {
-			logger.info("exitForDeclaration:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitForDeclaration:" + ctx.getText());			
 		}
 	}
 
@@ -703,8 +702,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	@Override
 	public void enterFromNumber(FromNumberContext ctx) {
 		
-		if (logger.isInfoEnabled()) {
-			logger.info("enterFromNumber:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterFromNumber:" + ctx.getText());			
 		}
 	}
 
@@ -713,8 +712,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void exitFromNumber(FromNumberContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("exitFromNumber:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitFromNumber:" + ctx.getText());			
 		}
 		
 	}
@@ -725,8 +724,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	@Override
 	public void enterThroughNumber(ThroughNumberContext ctx) {
 		
-		if (logger.isInfoEnabled()) {
-			logger.info("enterThroughNumber:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterThroughNumber:" + ctx.getText());			
 		}
 	}
 
@@ -735,8 +734,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void exitThroughNumber(ThroughNumberContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("exitThroughNumber:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitThroughNumber:" + ctx.getText());			
 		}
 		
 	}
@@ -746,8 +745,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void enterWhileDeclaration(WhileDeclarationContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("enterWhileDeclaration:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterWhileDeclaration:" + ctx.getText());			
 		}
 		
 	}
@@ -757,8 +756,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void exitWhileDeclaration(WhileDeclarationContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("exitWhileDeclaration:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitWhileDeclaration:" + ctx.getText());			
 		}
 		
 	}
@@ -768,8 +767,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void enterEachDeclaration(EachDeclarationContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("enterEachDeclaration:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterEachDeclaration:" + ctx.getText());			
 		}
 		
 	}
@@ -779,8 +778,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void exitEachDeclaration(EachDeclarationContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("exitEachDeclaration:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitEachDeclaration:" + ctx.getText());			
 		}
 		
 	}
@@ -790,8 +789,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void enterEachValueList(EachValueListContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("enterEachValueList:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterEachValueList:" + ctx.getText());			
 		}
 		
 	}
@@ -801,8 +800,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void exitEachValueList(EachValueListContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("exitEachValueList:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitEachValueList:" + ctx.getText());			
 		}
 		
 	}
@@ -812,8 +811,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void enterIdentifierListOrMap(IdentifierListOrMapContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("enterIdentifierListOrMap:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterIdentifierListOrMap:" + ctx.getText());			
 		}
 		
 	}
@@ -823,8 +822,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void exitIdentifierListOrMap(IdentifierListOrMapContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("exitIdentifierListOrMap:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitIdentifierListOrMap:" + ctx.getText());			
 		}
 		
 	}
@@ -834,8 +833,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void enterIdentifierValue(IdentifierValueContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("enterIdentifierValue:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterIdentifierValue:" + ctx.getText());			
 		}
 		
 	}
@@ -845,8 +844,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void exitIdentifierValue(IdentifierValueContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("exitIdentifierValue:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitIdentifierValue:" + ctx.getText());			
 		}
 		
 	}
@@ -856,8 +855,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void enterImportDeclaration(ImportDeclarationContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("enterImportDeclaration:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterImportDeclaration:" + ctx.getText());			
 		}
 		
 	}
@@ -867,8 +866,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void exitImportDeclaration(ImportDeclarationContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("exitImportDeclaration:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitImportDeclaration:" + ctx.getText());			
 		}
 		
 	}
@@ -878,8 +877,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void enterReferenceUrl(ReferenceUrlContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("enterReferenceUrl:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterReferenceUrl:" + ctx.getText());			
 		}
 		
 	}
@@ -890,8 +889,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	@Override
 	public void exitReferenceUrl(ReferenceUrlContext ctx) {
 		
-		if (logger.isInfoEnabled()) {
-			logger.info("exitReferenceUrl:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitReferenceUrl:" + ctx.getText());			
 		}
 	}
 
@@ -900,8 +899,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void enterMediaTypes(MediaTypesContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("enterMediaTypes:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterMediaTypes:" + ctx.getText());			
 		}
 		
 	}
@@ -912,8 +911,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	@Override
 	public void exitMediaTypes(MediaTypesContext ctx) {
 		
-		if (logger.isInfoEnabled()) {
-			logger.info("exitMediaTypes:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitMediaTypes:" + ctx.getText());			
 		}
 	}
 
@@ -922,8 +921,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void enterNested(NestedContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("enterNested:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterNested:" + ctx.getText());			
 		}
 		
 	}
@@ -933,8 +932,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void exitNested(NestedContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("exitNested:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitNested:" + ctx.getText());			
 		}
 		
 	}
@@ -944,8 +943,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void enterNest(NestContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("enterNest:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterNest:" + ctx.getText());			
 		}
 		
 	}
@@ -956,8 +955,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	@Override
 	public void exitNest(NestContext ctx) {
 		
-		if (logger.isInfoEnabled()) {
-			logger.info("exitNest:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitNest:" + ctx.getText());			
 		}
 	}
 
@@ -966,8 +965,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void enterRuleset(RulesetContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("enterRuleset" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterRuleset" + ctx.getText());			
 		}
 		StyleRule rule = new StyleRule(ctx.getStart().getLine(), ctx.getStart().getCharPositionInLine());
 		if (!rules.isEmpty()) {
@@ -984,8 +983,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void exitRuleset(RulesetContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("exitRuleset:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitRuleset:" + ctx.getText());			
 		}
 		if (stylesheet!=null) {
 			rules.pop();			
@@ -997,8 +996,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void enterBlock(BlockContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("enterBlock:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterBlock:" + ctx.getText());			
 		}
 		
 	}
@@ -1009,8 +1008,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	@Override
 	public void exitBlock(BlockContext ctx) {
 		
-		if (logger.isInfoEnabled()) {
-			logger.info("exitBlock:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitBlock:" + ctx.getText());			
 		}
 	}
 
@@ -1020,8 +1019,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	@Override
 	public void enterSelectors(SelectorsContext ctx) {
 		
-		if (logger.isInfoEnabled()) {
-			logger.info("enterSelectors:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterSelectors:" + ctx.getText());			
 		}
 	}
 
@@ -1031,8 +1030,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	@Override
 	public void exitSelectors(SelectorsContext ctx) {
 		
-		if (logger.isInfoEnabled()) {
-			logger.info("exitSelectors:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitSelectors:" + ctx.getText());			
 		}
 		
 	}
@@ -1042,8 +1041,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void enterSelector(SelectorContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("enterSelector:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterSelector:" + ctx.getText());			
 		}
 		rules.peek().addSelector(ctx.getText());		
 	}
@@ -1054,8 +1053,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	@Override
 	public void exitSelector(SelectorContext ctx) {
 		
-		if (logger.isInfoEnabled()) {
-			logger.info("exitSelector:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitSelector:" + ctx.getText());			
 		}
 	}
 
@@ -1064,8 +1063,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void enterSelectorPrefix(SelectorPrefixContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("enterSelectorPrefix:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterSelectorPrefix:" + ctx.getText());			
 		}
 		
 	}
@@ -1075,8 +1074,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void exitSelectorPrefix(SelectorPrefixContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("exitSelectorPrefix:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitSelectorPrefix:" + ctx.getText());			
 		}
 		
 	}
@@ -1087,8 +1086,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	@Override
 	public void enterElement(ElementContext ctx) {
 		
-		if (logger.isInfoEnabled()) {
-			logger.info("enterElement:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterElement:" + ctx.getText());			
 		}
 	}
 
@@ -1097,8 +1096,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void exitElement(ElementContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("exitElement:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitElement:" + ctx.getText());			
 		}
 		
 	}
@@ -1108,8 +1107,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void enterPseudo(PseudoContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("enterPseudo:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterPseudo:" + ctx.getText());			
 		}
 		
 	}
@@ -1119,8 +1118,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void exitPseudo(PseudoContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("exitPseudo:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitPseudo:" + ctx.getText());			
 		}
 		
 	}
@@ -1130,8 +1129,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void enterAttrib(AttribContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("enterAttrib:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterAttrib:" + ctx.getText());			
 		}
 		
 	}
@@ -1141,8 +1140,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void exitAttrib(AttribContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("exitAttrib:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitAttrib:" + ctx.getText());			
 		}
 		
 	}
@@ -1152,8 +1151,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void enterAttribRelate(AttribRelateContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("enterAttribRelate:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterAttribRelate:" + ctx.getText());			
 		}
 		
 	}
@@ -1163,8 +1162,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void exitAttribRelate(AttribRelateContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("exitAttribRelate:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitAttribRelate:" + ctx.getText());			
 		}
 		
 	}
@@ -1174,8 +1173,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void enterIdentifier(IdentifierContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("enterIdentifier:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterIdentifier:" + ctx.getText());			
 		}
 		if (property!=null) {
 			if (property.getName()==null) {
@@ -1189,8 +1188,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void exitIdentifier(IdentifierContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("exitIdentifier:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitIdentifier:" + ctx.getText());			
 		}
 		
 	}
@@ -1200,8 +1199,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void enterIdentifierPart(IdentifierPartContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("enterIdentifierPart:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterIdentifierPart:" + ctx.getText());			
 		}
 		
 	}
@@ -1211,8 +1210,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void exitIdentifierPart(IdentifierPartContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("exitIdentifierPart:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitIdentifierPart:" + ctx.getText());			
 		}
 		
 	}
@@ -1222,8 +1221,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void enterIdentifierVariableName(IdentifierVariableNameContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("enterIdentifierVariableName:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterIdentifierVariableName:" + ctx.getText());			
 		}
 		
 	}
@@ -1233,8 +1232,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void exitIdentifierVariableName(IdentifierVariableNameContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("exitIdentifierVariableName:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitIdentifierVariableName:" + ctx.getText());			
 		}
 		
 	}
@@ -1244,8 +1243,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void enterProperty(PropertyContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("enterProperty:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterProperty:" + ctx.getText());			
 		}
 		
 		property = new StyleProperty(ctx.getStart().getLine(), ctx.getStart().getCharPositionInLine());
@@ -1259,8 +1258,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void exitProperty(PropertyContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("entexitPropertyerParam:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("entexitPropertyerParam:" + ctx.getText());			
 		}
 		property = null;		
 	}
@@ -1271,8 +1270,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	@Override
 	public void enterValues(ValuesContext ctx) {
 		
-		if (logger.isInfoEnabled()) {
-			logger.info("enterValues:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterValues:" + ctx.getText());			
 		}
 		String value = ctx.getText();
 		if (var!=null) {
@@ -1288,8 +1287,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void exitValues(ValuesContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("exitValues:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitValues:" + ctx.getText());			
 		}
 		if (expr!=null) {
 			if (var!=null) {
@@ -1305,8 +1304,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void enterUrl(UrlContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("enterUrl:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterUrl:" + ctx.getText());			
 		}
 		
 	}
@@ -1316,8 +1315,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void exitUrl(UrlContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("exitUrl:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitUrl:" + ctx.getText());			
 		}
 		
 	}
@@ -1327,8 +1326,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void enterMeasurement(MeasurementContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("enterMeasurement:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterMeasurement:" + ctx.getText());			
 		}
 		
 	}
@@ -1338,8 +1337,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void exitMeasurement(MeasurementContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("exitMeasurement:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitMeasurement:" + ctx.getText());			
 		}
 		
 	}
@@ -1349,8 +1348,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void enterFunctionCall(FunctionCallContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("enterFunctionCall:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterFunctionCall:" + ctx.getText());			
 		}
 		
 	}
@@ -1360,8 +1359,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	 */
 	@Override
 	public void exitFunctionCall(FunctionCallContext ctx) {
-		if (logger.isInfoEnabled()) {
-			logger.info("exitFunctionCall:" + ctx.getText());			
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitFunctionCall:" + ctx.getText());			
 		}
 		
 	}
