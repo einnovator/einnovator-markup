@@ -49,29 +49,37 @@ public class MarkdownImgProcessor implements MarkupProcessor {
 				sb.append(text.substring(i));
 				break;
 			} else {
-				int i3 = text.indexOf("(", i2);
-				if (i3>0 && i3<text.length()-1) {
-					int i4 = text.indexOf(")", i3);
-					if (i4>0 && i4<text.length()-1) {
-						String uri = text.substring(i3+1, i4);
-						if (!isUrl(uri)) {
-							if (isAbsolute(uri)) {
-								uri = PathUtil.concat(rootUri, uri);
-							} else {
-								uri = PathUtil.concat(rootUri, PathUtil.concat(path, uri));								
+				int i02 = text.indexOf("]", i2);
+				if (i02>0 && i02<text.length()-2) {
+					int i3 = text.indexOf("(", i02);
+					if (i3==i02+1) {
+						int i4 = text.indexOf(")", i3);
+						if (i4>0) {
+							String uri = text.substring(i3+1, i4).trim();
+							if (!isUrl(uri)) {
+								if (isAbsolute(uri)) {
+									uri = PathUtil.concat(rootUri, uri);
+								} else {
+									uri = PathUtil.concat(rootUri, PathUtil.concat(path, uri));								
+								}
 							}
-						}
+							sb.append(text.substring(i, i3+1));
+							sb.append(uri);
+							sb.append(")");
+							i = i4+1;
+							continue;
+						} 
+					}
+					if (i3>0) {
 						sb.append(text.substring(i, i3+1));
-						sb.append(uri);
-						sb.append(")");
-						i = i4+1;
+						i = i3+1;	
 						continue;
 					}
-					sb.append(text.substring(i, i3+1));
-					i = i3+1;
+					sb.append(text.substring(i, i2+1));
+					i = i2+1;
+					continue;
 				}
-				sb.append(text.substring(i, i2+1));
-				i = i2+1;
+				sb.append(text.substring(i));
 				break;
 			}
 		}

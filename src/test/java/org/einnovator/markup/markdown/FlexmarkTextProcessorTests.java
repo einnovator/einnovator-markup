@@ -38,6 +38,10 @@ public class FlexmarkTextProcessorTests {
 		flexmark(":octocat:");
 
 
+		flexmark("\\\\");
+		flexmark("\\[ \\]");
+		flexmark("\\( \\)");
+
 	}
 	
 	public void flexmark(String text) {
