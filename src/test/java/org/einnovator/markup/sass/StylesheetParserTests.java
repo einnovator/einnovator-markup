@@ -3,8 +3,6 @@
  */
 package org.einnovator.markup.sass;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 /**
@@ -23,6 +21,7 @@ public class StylesheetParserTests {
 				"	background-color: $primary;\r\n" + 
 				"	span {\r\n" + 
 				"		 color: #880;\r\n" + 
+				"		 padding: 10px;\r\n" + 
 				"	}\r\n" + 
 				"	&:hover {\r\n" + 
 				"		text-decoration: underline;\r\n" + 
@@ -39,5 +38,27 @@ public class StylesheetParserTests {
 
 		stylesheet.printCss();
 	}
+	
+	@Test
+	public void test2() {
+		StylesheetParser parser = new StylesheetParser();
+		String s = 
+				"a {\r\n" + 
+				"	 padding: 10px;\r\n" + 
+				"}";
+		Stylesheet stylesheet = parser.parseScss(s);
+		System.out.println("------Tree:");
+		stylesheet.printTree();
+		System.out.println("------Css:");
+		stylesheet.setFilename("stylesheet.scss");
+		stylesheet.printCss();
+		System.out.println("--Vars:");
+		System.out.println(stylesheet.getVars());
+		System.out.println("------Eval:");
+		stylesheet.evalAll();
+
+		stylesheet.printCss();
+	}
+
 
 }

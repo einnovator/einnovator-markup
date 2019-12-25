@@ -136,6 +136,29 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	}
 
 
+
+	/* 
+	 * @see org.einnovator.markup.sass.antlr.ScssParserListener#enterMeasurement(org.einnovator.markup.sass.antlr.ScssParser.MeasurementContext)
+	 */
+	@Override
+	public void enterMeasurement(MeasurementContext ctx) {
+		if (logger.isDebugEnabled()) {
+			logger.debug("enterMeasurement:" + ctx.getText());			
+		}
+		
+	}
+
+	/* 
+	 * @see org.einnovator.markup.sass.antlr.ScssParserListener#exitMeasurement(org.einnovator.markup.sass.antlr.ScssParser.MeasurementContext)
+	 */
+	@Override
+	public void exitMeasurement(MeasurementContext ctx) {
+		if (logger.isDebugEnabled()) {
+			logger.debug("exitMeasurement:" + ctx.getText());			
+		}
+		
+	}
+
 	/* 
 	 * @see org.antlr.v4.runtime.tree.ParseTreeListener#visitTerminal(org.antlr.v4.runtime.tree.TerminalNode)
 	 */
@@ -144,7 +167,7 @@ public class ScssParserListenerImpl implements ScssParserListener {
 		if (logger.isDebugEnabled()) {
 			logger.debug("visitTerminal:" + node);			
 		}
-		if (bexpr || expr!=null) {
+		if (bexpr) {
 			JLiteral literal = new JLiteral(node.getText());
 			addExpr(literal);
 		}
@@ -160,7 +183,11 @@ public class ScssParserListenerImpl implements ScssParserListener {
 				} else {
 					((JOperationXY)expr).setRight(expr2);												
 				}
-			} 
+			} else if (expr instanceof JLiteral) {
+				if (expr2 instanceof JLiteral) {
+					((JLiteral) expr).setValue(((JLiteral) expr).getValue().toString() + ((JLiteral) expr2).getValue().toString());
+				}
+			}
 		} else {
 			expr = expr2;
 		}
@@ -1317,28 +1344,6 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	public void exitUrl(UrlContext ctx) {
 		if (logger.isDebugEnabled()) {
 			logger.debug("exitUrl:" + ctx.getText());			
-		}
-		
-	}
-
-	/* 
-	 * @see org.einnovator.markup.sass.antlr.ScssParserListener#enterMeasurement(org.einnovator.markup.sass.antlr.ScssParser.MeasurementContext)
-	 */
-	@Override
-	public void enterMeasurement(MeasurementContext ctx) {
-		if (logger.isDebugEnabled()) {
-			logger.debug("enterMeasurement:" + ctx.getText());			
-		}
-		
-	}
-
-	/* 
-	 * @see org.einnovator.markup.sass.antlr.ScssParserListener#exitMeasurement(org.einnovator.markup.sass.antlr.ScssParser.MeasurementContext)
-	 */
-	@Override
-	public void exitMeasurement(MeasurementContext ctx) {
-		if (logger.isDebugEnabled()) {
-			logger.debug("exitMeasurement:" + ctx.getText());			
 		}
 		
 	}
