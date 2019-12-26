@@ -200,7 +200,7 @@ public class StyleRule extends StyleObject {
 			if (selectors!=null) {
 				for (String selector: selectors) {				
 					for (StyleRule rule: rules) {				
-						rule.printCss(selector, writer, stylesheet);
+						rule.printCss((prefix!=null ? prefix + " " : "") + selector, writer, stylesheet);
 					}					
 				}
 			}

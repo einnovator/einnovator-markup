@@ -60,5 +60,27 @@ public class StylesheetParserTests {
 		stylesheet.printCss();
 	}
 
+	
+	@Test
+	public void test3() {
+		StylesheetParser parser = new StylesheetParser();
+		String s = 
+				".a {\r\n" + 
+				"	color: red;\r\n" + 
+				"	.b {\r\n" + 
+				"		margin: 10;\r\n" + 
+				"		.c {\r\n" + 
+				"	 		padding: 10px;\r\n" + 
+				"		}\r\n" +
+				"	}\r\n" +
+				"}";
+		Stylesheet stylesheet = parser.parseScss(s);
+		System.out.println("------Tree:");
+		stylesheet.printTree();
+		System.out.println("------Css:");
+		stylesheet.setFilename("stylesheet.scss");
+		stylesheet.printCss();
+	}
+
 
 }
