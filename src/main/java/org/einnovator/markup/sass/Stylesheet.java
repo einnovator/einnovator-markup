@@ -11,6 +11,7 @@ import java.util.Map;
 
 import org.einnovator.script.model.JExpr;
 import org.einnovator.script.model.JLiteral;
+import org.einnovator.script.model.JOperationN;
 import org.einnovator.script.model.JVarRef;
 
 /**
@@ -248,6 +249,26 @@ public class Stylesheet {
 	public Object eval(JExpr expr) {
 		if (expr instanceof JLiteral) {
 			return ((JLiteral)expr).getValue();
+		}
+		if (expr instanceof JOperationN) {
+			JExpr[] exprs = ((JOperationN)expr).getExprs();
+			if (exprs!=null && exprs.length>0) {
+				StringBuilder sb = new StringBuilder();
+				for (JExpr expr2: exprs) {
+					Object value = eval(expr2);
+					if (value!=null) {
+						String s = value.toString();
+						if (s!=null && !s.isEmpty()) {
+							if (sb.length()>0) {
+								sb.append(" ");
+							}
+							sb.append(s);
+						}
+					}
+				}
+				return sb.toString();
+			}
+			return null;
 		}
 		if (expr instanceof JVarRef) {
 			String name = ((JVarRef)expr).getName();

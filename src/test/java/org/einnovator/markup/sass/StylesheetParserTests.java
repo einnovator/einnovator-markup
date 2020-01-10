@@ -81,6 +81,30 @@ public class StylesheetParserTests {
 		stylesheet.setFilename("stylesheet.scss");
 		stylesheet.printCss();
 	}
+	
+	
+
+	@Test
+	public void test4() {
+		StylesheetParser parser = new StylesheetParser();
+		String s = 
+".footer {\r\n" + 
+"    padding: 1;\r\n" + 
+"    margin: 0 0;\r\n" + 
+"    margin: 2px 2px;\r\n" + 
+//"    border-top: none;\r\n" + 
+//"    color: white !important;\r\n" + 
+"}";
+			
+		Stylesheet stylesheet = parser.parseScss(s);
+		System.out.println("------Tree:");
+		stylesheet.printTree();
+		System.out.println("------Css:");
+		stylesheet.setFilename("stylesheet.scss");
+		stylesheet.printCss();
+	}
+	
+
 
 
 }

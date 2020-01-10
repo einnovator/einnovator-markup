@@ -152,7 +152,7 @@ public class StyleRule extends StyleObject {
 
 		if (properties!=null) {
 			for (StyleProperty property: properties) {
-				System.out.println(String.format("%" + ((n+1)*2) + "s", "") +  property.getName() + " : " + property.getValue() + ";" + (property.getExpr()!=null ? " " + property.getExpr() : ""));
+				System.out.println(String.format("%" + ((n+1)*2) + "s", "") +  property.getName() + " : " +  (property.getExpr()!=null ? " " + property.getExpr() : ""));
 			}
 		}
 		if (rules!=null) {
@@ -191,7 +191,7 @@ public class StyleRule extends StyleObject {
 
 		if (properties!=null) {
 			for (StyleProperty property: properties) {
-				writer.println("  " +  property.getName() + " : " + property.getValue() + ";");
+				writer.println("  " +  property.getName() + " : " + stylesheet.evalAsString(property.getExpr()) + ";");
 			}
 		}
 		writer.println("}");

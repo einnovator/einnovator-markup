@@ -3,6 +3,9 @@
  */
 package org.einnovator.markup.sass;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Stack;
 
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -65,9 +68,11 @@ import org.einnovator.markup.sass.antlr.ScssParser.WhileDeclarationContext;
 import org.einnovator.markup.sass.antlr.ScssParserListener;
 import org.einnovator.script.model.JExpr;
 import org.einnovator.script.model.JLiteral;
+import org.einnovator.script.model.JOperationN;
 import org.einnovator.script.model.JOperationX;
 import org.einnovator.script.model.JOperationXY;
 import org.einnovator.script.model.JVarRef;
+import org.einnovator.script.model.Operator;
 
 /**
  * @author support@einnovator.org
@@ -86,6 +91,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	StyleVariable var;
 	
 	JExpr expr;
+	
+	List<JExpr> exprs = new ArrayList<>();
 	
 	boolean bexpr;
 	
@@ -174,6 +181,9 @@ public class ScssParserListenerImpl implements ScssParserListener {
 	}
 
 	private void addExpr(JExpr expr2) {
+		if (logger.isTraceEnabled()) {
+			logger.trace("addExpr:" + expr + " " + expr2);
+		}
 		if (expr!=null) {
 			if (expr instanceof JOperationX) {
 				((JOperationX)expr).setValue(expr2);
@@ -183,13 +193,14 @@ public class ScssParserListenerImpl implements ScssParserListener {
 				} else {
 					((JOperationXY)expr).setRight(expr2);												
 				}
-			} else if (expr instanceof JLiteral) {
+			}  else if (expr instanceof JLiteral) {
 				if (expr2 instanceof JLiteral) {
 					((JLiteral) expr).setValue(((JLiteral) expr).getValue().toString() + ((JLiteral) expr2).getValue().toString());
 				}
 			}
 		} else {
 			expr = expr2;
+			exprs.add(expr);
 		}
 	}
 	/* 
@@ -485,7 +496,6 @@ public class ScssParserListenerImpl implements ScssParserListener {
 		if (logger.isDebugEnabled()) {
 			logger.debug("enterCommandStatement:" + ctx.getText());			
 		}
-		
 	}
 
 	/* 
@@ -497,6 +507,7 @@ public class ScssParserListenerImpl implements ScssParserListener {
 		if (logger.isDebugEnabled()) {
 			logger.debug("exitCommandStatement:" + ctx.getText());			
 		}
+
 	}
 
 	/* 
@@ -1303,9 +1314,8 @@ public class ScssParserListenerImpl implements ScssParserListener {
 		String value = ctx.getText();
 		if (var!=null) {
 			var.setValue(value);
-		} else if (property!=null) {
-			property.setValue(value);			
 		}
+		exprs.clear();
 
 	}
 
@@ -1317,14 +1327,23 @@ public class ScssParserListenerImpl implements ScssParserListener {
 		if (logger.isDebugEnabled()) {
 			logger.debug("exitValues:" + ctx.getText());			
 		}
-		if (expr!=null) {
-			if (var!=null) {
-				var.setExpr(expr);
-			} else if (property!=null) {
-				property.setExpr(expr);			
-			}			
+		if (!exprs.isEmpty()) {
+			if (exprs.size()>1) {
+				expr = new JOperationN(Operator.JOIN, exprs.toArray(new JExpr[exprs.size()]));
+				if (logger.isTraceEnabled()) {
+					logger.trace("exitValues:" + expr);			
+				}
+			}
+			if (expr!=null) {
+				if (var!=null) {
+					var.setExpr(expr);
+				} else if (property!=null) {
+					property.setExpr(expr);			
+				}				
+			}
 		}
 	}
+	
 
 	/* 
 	 * @see org.einnovator.markup.sass.antlr.ScssParserListener#enterUrl(org.einnovator.markup.sass.antlr.ScssParser.UrlContext)
