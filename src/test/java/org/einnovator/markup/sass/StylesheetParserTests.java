@@ -89,11 +89,11 @@ public class StylesheetParserTests {
 		StylesheetParser parser = new StylesheetParser();
 		String s = 
 ".footer {\r\n" + 
-"    padding: 1;\r\n" + 
-"    margin: 0 0;\r\n" + 
-"    margin: 2px 2px;\r\n" + 
+//"    padding: 1;\r\n" + 
+//"    margin: 0 0;\r\n" + 
+//"    margin: 2px 2px;\r\n" + 
 //"    border-top: none;\r\n" + 
-//"    color: white !important;\r\n" + 
+"    color: white !important;\r\n" + 
 "}";
 			
 		Stylesheet stylesheet = parser.parseScss(s);

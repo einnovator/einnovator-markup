@@ -176,6 +176,7 @@ public class StyleRule extends StyleObject {
 				if (i>0) {
 					writer.print(", ");
 				}
+				i++;
 				if (prefix!=null) {
 					writer.print(prefix);
 					if (!selector.startsWith("&")) {

@@ -41,7 +41,7 @@ public class WordsToCamelCaseTextTransform implements TextTransform {
 	}
 
 	//
-	// Getters and setters
+	// Getters/Setters
 	//
 	
 	/**

@@ -38,7 +38,7 @@ public class CamelCaseToUnderscoreTextTransform extends CamelCaseToWordsTextTran
 	}
 
 	//
-	// Getters and setters
+	// Getters/Setters
 	//
 	
 	/**

@@ -51,7 +51,7 @@ public class EllipsisTransform implements TextTransform {
 
 
 	//
-	// Getters and setters
+	// Getters/Setters
 	//
 	
 

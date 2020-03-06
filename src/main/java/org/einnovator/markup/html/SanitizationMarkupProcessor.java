@@ -51,7 +51,7 @@ public class SanitizationMarkupProcessor implements MarkupProcessor {
 
 	
 	//
-	// Getters and setters
+	// Getters/Setters
 	//
 	
 	

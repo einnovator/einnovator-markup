@@ -52,7 +52,7 @@ public class SubStringTransform implements TextTransform {
 	
 	
 	//
-	// Getters and setters
+	// Getters/Setters
 	//
 
 	/**

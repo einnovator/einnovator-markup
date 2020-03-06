@@ -40,7 +40,7 @@ public class PrefixSuffixTextTransform implements TextTransform {
 	}
 
 	//
-	// Getters and setters
+	// Getters/Setters
 	//
 	
 	/**
