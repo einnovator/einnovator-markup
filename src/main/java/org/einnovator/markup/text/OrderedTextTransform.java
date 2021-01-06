@@ -13,7 +13,7 @@ import org.springframework.core.Ordered;
 /**
  * A {@code OrderedTextTransform}.
  *
- * @author  {@code support@einnovator.org} {@code {jorge.simao@einnovator.org}}
+ * @author  {@code support@einnovator.org} {@code {support@einnovator.org}}
  */
 public class OrderedTextTransform extends CompositeTextTransform {
 

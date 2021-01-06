@@ -13,7 +13,7 @@ import org.springframework.core.Ordered;
 /**
  * A composite or chain of {@code TextTransform}.
  *
- * @author Jorge Sim�o, {@code jorge.simao@einnovator.org}
+ * @author Jorge Sim�o, {@code josupport@einnovator.org
  *
  */
 public class CompositeTextTransform implements TextTransform { 

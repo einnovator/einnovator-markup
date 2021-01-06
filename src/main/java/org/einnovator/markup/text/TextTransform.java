@@ -6,7 +6,7 @@ package org.einnovator.markup.text;
 /**
  * A text to text transformation.
  * 
- * @author Jorge Sim�o, {@code jorge.simao@einnovator.org}
+ * @author Jorge Sim�o, {@code support@einnovator.org}
  *
  */
 public interface TextTransform {

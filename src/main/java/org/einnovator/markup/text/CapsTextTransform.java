@@ -10,7 +10,7 @@ import org.springframework.util.StringUtils;
 /**
  * A {@code CapsTextTransform}.
  *
- * @author  {@code support@einnovator.org} {@code {jorge.simao@einnovator.org}}
+ * @author  {@code support@einnovator.org} {@code {support@einnovator.org}}
  */
 public class CapsTextTransform implements TextTransform {
 
